@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #566573;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mussymain.Controller_PaginaInicial">
+   <children>
+      <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #566573;">
+        <items>
+            <MenuButton fx:id="pgInicial_MenuButton_Ola" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #566573;" text="Olá User!" textFill="#eaecee">
+              <items>
+                  <MenuItem fx:id="MenuItem_Ajuda" mnemonicParsing="false" text="Ajuda" />
+                <MenuItem fx:id="MenuItem_Sair" mnemonicParsing="false" text="Logout" />
+              </items>
+               <font>
+                  <Font name="Unispace-Bold" size="18.0" />
+               </font>
+            </MenuButton>
+            <Label fx:id="pgInicial_Label_MussyCoins" alignment="CENTER" prefHeight="30.0" prefWidth="472.0" text="MussyCoins = 1000" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="pgInicial_Button_Amigos1" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: Transparent;" text="Amigos \/" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="18.0" />
+               </font>
+            </Button>
+        </items>
+      </ToolBar>
+      <TabPane fx:id="pgInicial_TabPane" layoutY="50.0" prefHeight="570.0" prefWidth="800.0" style="-fx-background-color: Transparent;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="pgInicial_Tab_Home" style="-fx-background-color: #FBFCFC;" text="Home">
+               <content>
+                  <BorderPane prefHeight="551.0" prefWidth="853.0">
+                     <left>
+                        <AnchorPane prefHeight="571.0" prefWidth="151.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button layoutX="1.0" layoutY="22.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: Transparent;" text="Notificação" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="1.0" layoutY="71.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="150.0" style="-fx-background-color: Transparent;" text="Mensagens" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="2.0" layoutY="121.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="150.0" style="-fx-background-color: #52BE80;" text="Poste Algo!" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                     </left>
+                     <right>
+                        <AnchorPane prefHeight="534.0" prefWidth="194.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="30.0" layoutY="14.0" text="Eventos" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="15.0" layoutY="287.0" text="Promoções" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </right>
+                     <center>
+                        <AnchorPane prefHeight="574.0" prefWidth="487.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Separator layoutX="3.0" orientation="VERTICAL" prefHeight="574.0" prefWidth="6.0" />
+                              <Separator layoutX="474.0" orientation="VERTICAL" prefHeight="574.0" prefWidth="0.0" />
+                              <ImageView fx:id="tabHome_ImageView_Ramon" fitHeight="201.0" fitWidth="442.0" layoutX="62.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Images/Ramon.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="52.0" layoutY="241.0" text="Cariri: O Ramon está Insano! Olympia é nosso" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="201.0" fitWidth="442.0" layoutX="62.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../Images/Cbum.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="104.0" layoutY="499.0" text="Lalá: Cbum tá se cagando de medo" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab fx:id="pgInicial_Tab_Treino" style="-fx-background-color: #FBFCFC;" text="Treino">
+               <content>
+                  <BorderPane prefHeight="570.0" prefWidth="800.0">
+                     <left>
+                        <AnchorPane prefHeight="500.0" prefWidth="293.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="143.0" prefWidth="269.0" text="Sem Foto&#10;Sem Treino.&#10;Mostre aos seus amigos&#10;que você não ficou &#10;na cama hoje&#10;" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="tabTreino_Button_FotoTreino" layoutX="11.0" layoutY="157.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="272.0" style="-fx-background-color: #52BE80;" text="Foto = +Musculo" textFill="WHITE">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER" layoutX="11.0" layoutY="197.0" prefHeight="32.0" prefWidth="93.0" text="+ 10 MussyCoins" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="tabTreino_Button_PdfTreino" layoutX="10.0" layoutY="443.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="274.0" style="-fx-background-color: #52BE80;" text="Clique Aqui!&#10;PDF com seu treino&#10;completo!" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <center>
+                        <AnchorPane prefHeight="571.0" prefWidth="505.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" layoutX="168.0" layoutY="14.0" prefHeight="32.0" prefWidth="225.0" text="Treino de Hoje" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutY="-2.0" orientation="VERTICAL" prefHeight="579.0" prefWidth="0.0" />
+                              <Button fx:id="tabTreino_Button_TaPago" layoutX="145.0" layoutY="464.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="272.0" style="-fx-background-color: #52BE80;" text="Tá Pago!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER" layoutX="146.0" layoutY="501.0" prefHeight="32.0" prefWidth="111.0" text="+ 100 MussyCoins" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                              <Text fx:id="tabTreino_Text_TreinoDia" fill="#eaecee" layoutX="18.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&#10;C (Peito e Ombro)&#10;&#10;0 - Aquecimento: Voador;&#10;1 - Supino Inclinado 30° 4xfalha;&#10;2 - Dumbell Press 4xfalha;&#10;3 - Pull Over 3xfalha; &#10;4 - Voador 4xfalha + Flexão; //drop&#10;&#10;5 - Elevação Lateral 5xfalha; //drop&#10;6 - Elevação Lateral Cabo 5xfalha; //drop&#10;7 - Ombro Posterior no cabo 4xfalha" wrappingWidth="472.0">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </content>
+          </Tab>
+            <Tab fx:id="pgInicial_Tab_Comida" style="-fx-background-color: #FBFCFC;" text="Comida">
+               <content>
+                  <BorderPane prefHeight="600.0" prefWidth="850.0">
+                     <left>
+                        <AnchorPane prefHeight="571.0" prefWidth="318.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" layoutX="88.0" layoutY="42.0" prefHeight="50.0" prefWidth="150.0" text="Gasto Basal&#10;" textFill="#52be80">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="64.0" layoutY="96.0" prefHeight="61.0" prefWidth="199.0" text="Gasto Médio/ dia" textFill="#f1c40f">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="73.0" layoutY="163.0" prefHeight="50.0" prefWidth="180.0" text="Consumo Diário" textFill="#922b21">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="21.0" layoutY="360.0" prefHeight="164.0" prefWidth="243.0" text="- Macros -&#10;&#10;Carboidratos = &#10;Proteinas = &#10;Gordura =" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tabComida_Label_CarboCount" alignment="CENTER" layoutX="232.0" layoutY="422.0" prefHeight="40.0" prefWidth="76.0" text="320g" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tabComida_Label_ProteinCount" alignment="CENTER" layoutX="189.0" layoutY="453.0" prefHeight="40.0" prefWidth="76.0" text="160g" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tabComida_Label_FatCount" alignment="CENTER" layoutX="157.0" layoutY="484.0" prefHeight="40.0" prefWidth="76.0" text="80g" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="315.0" layoutY="-7.0" orientation="VERTICAL" prefHeight="592.0" prefWidth="12.0" />
+                              <Label fx:id="tabComida_Label_Consumir" alignment="CENTER" layoutX="89.0" layoutY="193.0" prefHeight="40.0" prefWidth="150.0" text="3000kcal" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tabComida_Label_GastoMedio" alignment="CENTER" layoutX="89.0" layoutY="130.0" prefHeight="40.0" prefWidth="150.0" text="2500kcal" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="tabComida_Label_Basal" alignment="CENTER" layoutX="89.0" layoutY="72.0" prefHeight="40.0" prefWidth="150.0" text="2000kcal" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </left>
+                     <center>
+                        <AnchorPane prefHeight="571.0" prefWidth="505.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label alignment="CENTER" layoutX="73.0" layoutY="14.0" prefHeight="50.0" prefWidth="352.0" text="O quanto você comeu hoje?&#10;(Prometo manter em segredo rs)" textAlignment="CENTER" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tabComida_TextField_CaloriasDia" layoutX="48.0" layoutY="97.0" prefHeight="40.0" prefWidth="401.0" promptText="Calorias do dia(Estimativa)" style="-fx-background-color: #eaecee;">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tabComida_TextField_CarboDia" layoutX="47.0" layoutY="148.0" prefHeight="40.0" prefWidth="401.0" promptText="Carboidratos" style="-fx-background-color: #eaecee;">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tabComida_TextField_ProteinDia" layoutX="47.0" layoutY="201.0" prefHeight="40.0" prefWidth="402.0" promptText="Proteinas" style="-fx-background-color: #eaecee;">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="tabComida_TextField_FatDia" layoutX="47.0" layoutY="253.0" prefHeight="40.0" prefWidth="404.0" promptText="Gordura" style="-fx-background-color: #eaecee;">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="tabComida_Button_Birl" layoutX="113.0" layoutY="311.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="272.0" style="-fx-background-color: #52BE80;" text="Birrrl!!!!" textFill="WHITE">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label alignment="CENTER" layoutX="113.0" layoutY="351.0" prefHeight="32.0" prefWidth="93.0" text="+ 50 MussyCoins" textFill="#eaecee">
+                                 <font>
+                                    <Font name="Unispace-Bold" size="10.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pgInicial_Tab_SeuProgresso" style="-fx-background-color: #FBFCFC;" text="Seu Progresso">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0">
+                     <children>
+                        <Label alignment="CENTER" layoutX="-25.0" layoutY="75.0" prefHeight="304.0" prefWidth="850.0" text="Para te ajudar a evoluir&#10;queremos saber:&#10;&#10;1. Seu percentual de Gordura&#10;2. Seu Biotipo&#10;3. O corpo que deseja&#10;&#10;Assim podemos mostrar seu progresso&#10;te motivando mais ainda!" textAlignment="CENTER" textFill="#eaecee">
+                           <font>
+                              <Font name="Unispace-Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="tabProgresso_Button_Amei" layoutX="201.0" layoutY="384.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="399.0" style="-fx-background-color: #52BE80;" text="Ameiiii!" textFill="WHITE">
+                           <font>
+                              <Font name="Unispace-Bold" size="18.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="201.0" layoutY="434.0" prefHeight="32.0" prefWidth="113.0" text="+ 500 MussyCoins" textFill="#eaecee">
+                           <font>
+                              <Font name="Unispace-Bold" size="10.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab style="-fx-background-color: #FBFCFC;" text="Perfil">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796" prefHeight="543.0" prefWidth="800.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label layoutX="48.0" layoutY="253.0" text="FOTO ATUAL">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Label fx:id="tabPerfil_Label_Nome" layoutX="14.0" layoutY="10.0" text="Nome">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Email" layoutX="14.0" layoutY="41.0" text="Email">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Meta" layoutX="279.0" layoutY="12.0" text="Meta">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Sexo" layoutX="14.0" layoutY="71.0" text="Sexo">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Peso" layoutX="279.0" layoutY="41.0" text="Peso">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Altura" layoutX="14.0" layoutY="100.0" text="Altura">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Idade" layoutX="14.0" layoutY="129.0" text="Idade">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_NDC" layoutX="279.0" layoutY="71.0" text="NDC">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_NivelAcad" layoutX="279.0" layoutY="100.0" text="Nivel Acad">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Gordura" layoutX="279.0" layoutY="129.0" text="Gordura">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="-4.0" layoutY="149.0" prefHeight="10.0" prefWidth="568.0" />
+                                    <Label layoutX="14.0" layoutY="159.0" text="Como está comendo:">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Regularidade" layoutX="14.0" layoutY="188.0" text="Regularidade">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Qualidade" layoutX="14.0" layoutY="217.0" text="Qualidade">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Agua" layoutX="14.0" layoutY="246.0" text="Água">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="279.0" layoutY="159.0" text="Como está a Rotina:">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Estresse" layoutX="279.0" layoutY="188.0" text="Estresse">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_TempoPTreinar" layoutX="279.0" layoutY="217.0" text="Tempo p treinar">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="-4.0" layoutY="266.0" prefHeight="10.0" prefWidth="568.0" />
+                                    <Label fx:id="tabPerfil_Label_Biotipo" layoutX="14.0" layoutY="276.0" text="Biotipo">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Suplemento" layoutX="14.0" layoutY="301.0" text="Usa Suplemento">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Anabol" layoutX="14.0" layoutY="327.0" text="Usa os Veneninhos (hehe hoy)">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Doenca" layoutX="14.0" layoutY="353.0" text="Doenças">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Separator layoutX="-4.0" layoutY="372.0" prefHeight="10.0" prefWidth="568.0" />
+                                    <Label fx:id="tabPerfil_Label_TMB" layoutX="14.0" layoutY="382.0" text="TMB">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="tabPerfil_Label_Ficha" layoutX="14.0" layoutY="406.0" text="Ficha de Treino">
+                                       <font>
+                                          <Font name="Unispace-Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

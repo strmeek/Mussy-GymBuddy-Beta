@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #566573;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mussymain.Controller_Passo_1">
+   <children>
+      <Button fx:id="passo1_Button_Voltar" mnemonicParsing="false" prefHeight="60.0" prefWidth="249.0" style="-fx-background-color: transparent;" text="&lt; Voltar para o Menu" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="passo1_Button_Proximo" layoutX="663.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Próximo &gt;" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="passo1_Label_passo1" layoutX="187.0" layoutY="156.0" text="Passo 1: Qual o seu objetivo?" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="passo1_RButton_Ganhar" alignment="BOTTOM_LEFT" layoutX="214.0" layoutY="276.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="372.0" styleClass="toggle-button" text="Ganhar Massa">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="passo1_RButton_Perder" alignment="BOTTOM_LEFT" layoutX="214.0" layoutY="215.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="372.0" styleClass="toggle-button" text="Perder Gordura">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="passo1_RButton_Ambos" alignment="BOTTOM_LEFT" layoutX="214.0" layoutY="338.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="372.0" styleClass="toggle-button" text="Ambos">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </RadioButton>
+   </children>
+</AnchorPane>

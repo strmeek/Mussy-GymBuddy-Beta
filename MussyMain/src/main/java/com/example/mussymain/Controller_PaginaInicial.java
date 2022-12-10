@@ -1,0 +1,142 @@
+package com.example.mussymain;
+
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class Controller_PaginaInicial implements Initializable {
+    @FXML
+    private ImageView tabHome_ImageView_Ramon;
+    @FXML
+    private ImageView tabHome_ImageView_Cbum;
+    @FXML
+    private MenuButton pgInicial_MenuButton_Ola;
+    @FXML
+    private MenuItem MenuItem_Ajuda;
+    @FXML
+    private MenuItem MenuItem_Sair;
+    @FXML
+    private Button tabTreino_Button_FotoTreino;
+    @FXML
+    private Button tabTreino_Button_PdfTreino;
+    @FXML
+    private Button tabTreino_Button_TaPago;
+    @FXML
+    private Label tabComida_Label_Basal;
+    @FXML
+    private Label tabComida_Label_GastoMedio;
+    @FXML
+    private Label tabComida_Label_Consumir;
+    @FXML
+    private Label tabComida_Label_CarboCount;
+    @FXML
+    private Label tabComida_Label_ProteinCount;
+    @FXML
+    private Label tabComida_Label_FatCount;
+    @FXML
+    private TextField tabComida_TextField_CaloriasDia;
+    @FXML
+    private TextField tabComida_TextField_CarboDia;
+    @FXML
+    private TextField tabComida_TextField_ProteinDia;
+    @FXML
+    private TextField tabComida_TextField_FatDia;
+    @FXML
+    private Button tabComida_Button_Birl;
+    @FXML
+    private Button tabProgresso_Button_Amei;
+    @FXML
+    private Label tabPerfil_Label_Nome;
+    @FXML
+    private Label tabPerfil_Label_Email;
+    @FXML
+    private Label tabPerfil_Label_Meta;
+    @FXML
+    private Label tabPerfil_Label_Sexo;
+    @FXML
+    private Label tabPerfil_Label_Altura;
+    @FXML
+    private Label tabPerfil_Label_Idade;
+    @FXML
+    private Label tabPerfil_Label_Peso;
+    @FXML
+    private Label tabPerfil_Label_NDC;
+    @FXML
+    private Label tabPerfil_Label_NivelAcad;
+    @FXML
+    private Label tabPerfil_Label_Gordura;
+    @FXML
+    private Label tabPerfil_Label_Regularidade;
+    @FXML
+    private Label tabPerfil_Label_Qualidade;
+    @FXML
+    private Label tabPerfil_Label_Agua;
+    @FXML
+    private Label tabPerfil_Label_Estresse;
+    @FXML
+    private Label tabPerfil_Label_TempoPTreinar;
+    @FXML
+    private Label tabPerfil_Label_Biotipo;
+    @FXML
+    private Label tabPerfil_Label_Suplemento;
+    @FXML
+    private Label tabPerfil_Label_Anabol;
+    @FXML
+    private Label tabPerfil_Label_Doenca;
+    @FXML
+    private Label tabPerfil_Label_TMB;
+    @FXML
+    private Label tabPerfil_Label_Ficha;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        MenuItem_Sair.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
+        MenuItem_Ajuda.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                System.out.println("Sem ajuda");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("Ainda não temos uma equipe de Suporte, desculpa :(");
+                alert.show();
+            }
+        });
+    }
+    public void loginUserInformation(Perfil perfil){
+        Data_Base_Utils.getAllInfo("perfil");
+
+        tabPerfil_Label_Nome.setText("Nome: " + perfil.getNome());
+        tabPerfil_Label_Altura.setText("Altura: " + perfil.getAltura());
+        tabPerfil_Label_Sexo.setText("Sexo: " + perfil.getSexo());
+        tabPerfil_Label_Email.setText("Email: " + perfil.getEmail());
+        tabPerfil_Label_Meta.setText("Meta: " + perfil.getMeta());
+        tabPerfil_Label_Peso.setText("Peso: " + perfil.getPeso());
+        tabPerfil_Label_NDC.setText("NDC: " + perfil.getQnt_Atividade_Fisica());
+        tabPerfil_Label_NivelAcad.setText("Nivel Acad: " + perfil.getTempo_de_Treino());
+        tabPerfil_Label_Gordura.setText("Gordura: " + perfil.getGordura_Corporal());
+        tabPerfil_Label_Regularidade.setText("Regularidade : " + perfil.getComida_Regularidade());
+        tabPerfil_Label_Qualidade.setText("Qualidade: " + perfil.getComida_Qualidade());
+        tabPerfil_Label_Agua.setText("Agua: " + perfil.getComida_Agua());
+        tabPerfil_Label_Estresse.setText("Estresse: " + perfil.getRotina_Estresse());
+        tabPerfil_Label_TempoPTreinar.setText("Tempo p Treinar: " + perfil.getRotina_Tempo_Para_Treinar());
+        tabPerfil_Label_Biotipo.setText("Biotipo: " + perfil.getBiotipo());
+        tabPerfil_Label_Suplemento.setText("Usa Suplemento: " + perfil.getSuplementos());
+        tabPerfil_Label_Anabol.setText("Usa Veneninhos(rs): " + perfil.getHormonios());
+        tabPerfil_Label_Doenca.setText("Doença: " + perfil.getDoente());
+
+    }
+}

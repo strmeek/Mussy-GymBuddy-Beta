@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #3498DB;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mussymain.Controller_Perfil">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #566573;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="perfil_Label_Text" layoutX="51.0" layoutY="95.0" prefHeight="410.0" prefWidth="699.0" text="Para te ajudar a conquistar o corpo que deseja,&#10;precisamos de algumas informações preciosas.&#10;Serão somente 5 passos:&#10;&#10;1. Qual o seu objetivo?&#10;2. Como está hoje?&#10;3. Como está comendo?&#10;4. Como é a sua rotina?&#10;5. Os últimos detalhes :)" textAlignment="CENTER" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="perfil_Button_Start" layoutX="246.0" layoutY="448.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="309.0" style="-fx-background-color: transparent;" text="&gt;Podemos começar?&lt;" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="perfil_Button_Logout" mnemonicParsing="false" prefHeight="60.0" prefWidth="257.0" style="-fx-background-color: transparent;" text="&lt; Voltar para o Menu" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="perfil_Label_Ola" alignment="CENTER" layoutY="95.0" prefHeight="32.0" prefWidth="800.0" text="Olá" textFill="#eaecee">
+               <font>
+                  <Font name="Unispace-Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

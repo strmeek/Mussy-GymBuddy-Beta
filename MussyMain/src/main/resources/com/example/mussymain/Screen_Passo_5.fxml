@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #566573;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mussymain.Controller_Passo_5">
+   <children>
+      <Button fx:id="passo5_Button_Voltar" mnemonicParsing="false" prefHeight="60.0" prefWidth="118.0" style="-fx-background-color: transparent;" text="&lt; Voltar" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="passo5_Button_Finalizar" layoutX="652.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="147.0" style="-fx-background-color: transparent;" text="Finalizar &gt;" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="148.0" layoutY="130.0" text="Passo 5: Os últimos detalhes" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="123.0" layoutY="195.0" prefHeight="32.0" prefWidth="373.0" text="Faz o uso de Suplementos?" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="passo5_RButton_SimSuple" layoutX="501.0" layoutY="191.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="87.0" style="-fx-background-color: #eaecee;" styleClass="toggle-button" text="Sim">
+         <font>
+            <Font name="Unispace-Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="passo5_RButton_NaoSuple" layoutX="600.0" layoutY="191.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="87.0" style="-fx-background-color: #eaecee;" styleClass="toggle-button" text="Não">
+         <font>
+            <Font name="Unispace-Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="59.0" layoutY="258.0" prefHeight="32.0" prefWidth="537.0" text="de Anabolizantes e/ou Hormonios?" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="passo5_RButton_SimAnabol" layoutX="543.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="87.0" style="-fx-background-color: #eaecee;" styleClass="toggle-button" text="Sim">
+         <font>
+            <Font name="Unispace-Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="passo5_RButton_NaoAnabol" layoutX="642.0" layoutY="254.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="87.0" style="-fx-background-color: #eaecee;" styleClass="toggle-button" text="Não">
+         <font>
+            <Font name="Unispace-Bold" size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="159.0" layoutY="315.0" prefHeight="32.0" prefWidth="492.0" text="Alguma doença/problema limitante?&#10;" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="150.0" layoutY="331.0" prefHeight="32.0" prefWidth="492.0" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="passo5_CheckBox_Nenhuma" alignment="TOP_LEFT" layoutX="201.0" layoutY="373.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: transparent;" text="Nenhuma" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="passo5_CheckBox_Diabetes" alignment="TOP_LEFT" layoutX="201.0" layoutY="409.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="131.0" style="-fx-background-color: transparent;" text="Diabetes" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="passo5_CheckBox_Hipertensao" alignment="TOP_LEFT" layoutX="201.0" layoutY="444.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="168.0" style="-fx-background-color: transparent;" text="Hipertensão" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="passo5_CheckBox_Cardio" alignment="TOP_LEFT" layoutX="393.0" layoutY="373.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="198.0" style="-fx-background-color: transparent;" text="Cardiovascular" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="passo5_CheckBox_Respiratorio" alignment="TOP_LEFT" layoutX="393.0" layoutY="409.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="198.0" style="-fx-background-color: transparent;" text="Respiratório" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="passo5_CheckBox_Osseo" alignment="TOP_LEFT" layoutX="393.0" layoutY="444.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="198.0" style="-fx-background-color: transparent;" text="Ósseo" textFill="#eaecee">
+         <font>
+            <Font name="Unispace-Bold" size="18.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>
