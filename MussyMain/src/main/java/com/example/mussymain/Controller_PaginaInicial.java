@@ -3,13 +3,15 @@ package com.example.mussymain;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+
 import javafx.fxml.Initializable;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
-import java.sql.SQLException;
+import java.text.DecimalFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
 public class Controller_PaginaInicial implements Initializable {
@@ -116,6 +118,7 @@ public class Controller_PaginaInicial implements Initializable {
             }
         });
     }
+    @SuppressWarnings("deprecation")
     public void loginUserInformation(Perfil perfil){
 
         tabPerfil_Label_Nome.setText("Nome: " + perfil.getNome());
@@ -137,5 +140,33 @@ public class Controller_PaginaInicial implements Initializable {
         tabPerfil_Label_Anabol.setText("Usa Veneninhos(rs): " + perfil.getHormonios());
         tabPerfil_Label_Doenca.setText("Doença: " + perfil.getDoente());
 
+        int idade = calculoIdade(perfil.getNascimento().getDate(),
+                perfil.getNascimento().getMonth(),
+                perfil.getNascimento().getYear());
+        tabPerfil_Label_Idade.setText("Idade: " + idade);
+
+        double TMB = calculoTMB(perfil.getPeso(), perfil.getAltura(), idade, perfil.getSexo());
+        DecimalFormat format = new DecimalFormat();
+        tabPerfil_Label_TMB.setText(String.format("TMB: " + format.format(TMB)));
+    }
+    public static int calculoIdade(int dia, int mes, int ano) {
+        int idade = (int) ChronoUnit.YEARS.between(LocalDate.of(ano, mes, dia), LocalDate.now());
+        if (dia == LocalDate.now().getDayOfMonth() && mes == LocalDate.now().getMonthValue() - 1){
+            System.out.println("PARABÉNS É SEU ANIVERSÁRIO!!!");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("PARABÉNS É SEU ANIVERSÁRIO!!!");
+            alert.show();
+        }
+        return idade - 1900;
+    }
+    public static double calculoTMB(double peso, double altura, double idade, String sexo){
+        double taxa_metabolica_basal;
+
+        if (sexo.equals("M")){
+            taxa_metabolica_basal = 66.5 + (peso * 13.8) + (altura * 5) - (idade * 6.8);
+        } else {
+            taxa_metabolica_basal = 655.1 + (peso * 9.6) + (altura * 1.8) - (idade * 4.7);
+        }
+        return taxa_metabolica_basal;
     }
 }
