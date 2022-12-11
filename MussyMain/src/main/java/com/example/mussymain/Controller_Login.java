@@ -10,16 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller_Login implements Initializable {
-    @FXML
-    private Label login_Label_Buildmuscle;
-    @FXML
-    private Label login_Label_Mussy;
     @FXML
     private TextField login_Email;
     @FXML

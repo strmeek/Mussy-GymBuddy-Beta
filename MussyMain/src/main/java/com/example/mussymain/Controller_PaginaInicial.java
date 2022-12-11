@@ -249,6 +249,55 @@ public class Controller_PaginaInicial implements Initializable {
                 alert.show();
             }
         });
+        tabComida_Button_Birl.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                try {
+                    String calorias = tabComida_TextField_CaloriasDia.getText();
+                    String carbo = tabComida_TextField_CarboDia.getText();
+                    String protein = tabComida_TextField_ProteinDia.getText();
+                    String gordura = tabComida_TextField_FatDia.getText();
+
+                    if (!calorias.isEmpty()
+                    && !carbo.isEmpty()
+                    && !protein.isEmpty()
+                    && !gordura.isEmpty()){
+                        double totalCarbo = Double.parseDouble(tabComida_Label_CarboCount.getText());
+                        double totalProtein = Double.parseDouble(tabComida_Label_ProteinCount.getText());
+                        double totalFat = Double.parseDouble(tabComida_Label_FatCount.getText());
+
+                        double carboDia = Double.parseDouble(carbo);
+                        double proteinDia = Double.parseDouble(protein);
+                        double gorduraDia = Double.parseDouble(gordura);
+
+                        if (totalProtein <= proteinDia
+                        && totalCarbo <= carboDia
+                        && totalFat <= gorduraDia){
+                            coins[0] += 50;
+                            pgInicial_Label_MussyCoins.setText("MussyCoins = " + coins[0]);
+                            Data_Base_Utils.updateStatementInt(actionEvent,"perfil", "mussycoins", coins[0]);
+                            System.out.println("Parabéns, você conseguiu!!");
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("Todos os objetivos de calorias e macronutrientes foram alcançados, parabéns!");
+                            alert.show();
+                        } else {
+                            System.out.println("Acontece :(");
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setContentText("Não Desanime, Acorde amanhã e tente de novo!");
+                            alert.show();
+                        }
+                    }
+                } catch (NullPointerException e){
+                    e.printStackTrace();
+                    System.out.println("Preencha todos os campos.");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Você esqueceu de algo :)");
+                    alert.show();
+                }
+
+
+            }
+        });
     }
     @SuppressWarnings("deprecation")
     public void loginUserInformation(Perfil perfil){
@@ -302,7 +351,7 @@ public class Controller_PaginaInicial implements Initializable {
             tabComida_Label_ProteinCount.setText(String.valueOf(perfil.getPeso() * 2));
             tabComida_Label_FatCount.setText(String.valueOf(perfil.getPeso() * 0.75));
         }else if (perfil.getMeta().equalsIgnoreCase("ganhar massa")) {
-            tabComida_Label_Consumir.setText(format.format(TMB + 425 + 600) + "+");
+            tabComida_Label_Consumir.setText(format.format(TMB + 425 + 600));
             tabComida_Label_CarboCount.setText(String.valueOf(perfil.getPeso() * 4));
             tabComida_Label_ProteinCount.setText(String.valueOf(perfil.getPeso() * 2));
             tabComida_Label_FatCount.setText(String.valueOf(perfil.getPeso() * 1.25));
