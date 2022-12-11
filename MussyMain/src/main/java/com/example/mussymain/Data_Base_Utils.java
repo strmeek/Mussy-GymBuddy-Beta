@@ -567,6 +567,7 @@ public class Data_Base_Utils {
                 perfil.setHormonios(resultSet.getString("hormonios"));
                 perfil.setDoente(resultSet.getString("doente"));
                 perfil.setCorpo_Desejado(resultSet.getString("corpo_desejado"));
+                perfil.setMussycoins(resultSet.getInt("mussycoins"));
                 }
         } catch (SQLException e){
             e.printStackTrace();

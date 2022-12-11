@@ -31,7 +31,7 @@
                   <Font name="Unispace-Bold" size="18.0" />
                </font>
             </MenuButton>
-            <Label fx:id="pgInicial_Label_MussyCoins" alignment="CENTER" prefHeight="30.0" prefWidth="472.0" text="MussyCoins = 1000" textFill="#eaecee">
+            <Label fx:id="pgInicial_Label_MussyCoins" alignment="CENTER" prefHeight="30.0" prefWidth="472.0" text="MussyCoins = 0" textFill="#eaecee">
                <font>
                   <Font name="Unispace-Bold" size="18.0" />
                </font>

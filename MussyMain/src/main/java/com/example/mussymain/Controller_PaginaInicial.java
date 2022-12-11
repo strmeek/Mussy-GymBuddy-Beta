@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -104,6 +105,10 @@ public class Controller_PaginaInicial implements Initializable {
     private Label tabPerfil_Label_TMB;
     @FXML
     private Label tabPerfil_Label_Ficha;
+    @FXML
+    private Label pgInicial_Label_MussyCoins;
+    @FXML
+    private Text tabTreino_Text_TreinoDia;
 
     int idade = 0;
     double TMB = 0;
@@ -115,7 +120,12 @@ public class Controller_PaginaInicial implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Perfil perfil = Data_Base_Utils.lista_Perfil.get(0);
+
         loginUserInformation(Data_Base_Utils.lista_Perfil.get(0));
+
+        final int[] coins = {perfil.getMussycoins()};
+
         tabHome_ImageView_Ramon.setImage(imageRamon);
         tabHome_ImageView_Cbum.setImage(imageCbum);
 
@@ -207,6 +217,21 @@ public class Controller_PaginaInicial implements Initializable {
                 }
             }
         });
+        tabTreino_Button_TaPago.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                coins[0] += 100;
+                pgInicial_Label_MussyCoins.setText("MussyCoins = " + coins[0]);
+                Data_Base_Utils.updateStatementInt(actionEvent,"perfil", "mussycoins", coins[0]);
+                tabTreino_Text_TreinoDia.setText("D (Quadriceps) \n" +
+                        ". Aquecimento: Passada;\n" +
+                        ". Adutora 4xfalha; // pre exaust\n" +
+                        ". Bulgarian Squat (ou Agach. livre) 4xfalha;\n" +
+                        ". Leg Press 6xfalha; //drop\n" +
+                        ". Agachamento na maq 4xfalha;\n" +
+                        ". Extensora 6xfalha; // isometria");
+            }
+        });
         MenuItem_Sair.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -244,6 +269,7 @@ public class Controller_PaginaInicial implements Initializable {
         tabPerfil_Label_Suplemento.setText("Usa Suplemento: " + perfil.getSuplementos());
         tabPerfil_Label_Anabol.setText("Usa Veneninhos(rs): " + perfil.getHormonios());
         tabPerfil_Label_Doenca.setText("Doença: " + perfil.getDoente());
+        pgInicial_Label_MussyCoins.setText("MussyCoins = " + perfil.getMussycoins());
 
         idade = calculoIdade(perfil.getNascimento().getDate(),
                 perfil.getNascimento().getMonth(),

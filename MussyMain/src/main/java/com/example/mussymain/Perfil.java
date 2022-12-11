@@ -31,6 +31,15 @@ public class Perfil {
     private String hormonios;
     private String doente;
     private String corpo_Desejado;
+    private int mussycoins;
+
+    public int getMussycoins() {
+        return mussycoins;
+    }
+
+    public void setMussycoins(int mussycoins) {
+        this.mussycoins = mussycoins;
+    }
 
     public Perfil() {
     }
