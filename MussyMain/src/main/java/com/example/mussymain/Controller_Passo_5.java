@@ -85,6 +85,7 @@ public class Controller_Passo_5 implements Initializable {
                         Data_Base_Utils.updateStatementString(actionEvent,"perfil", "hormonios", anabol);
                         Data_Base_Utils.updateStatementString(actionEvent,"perfil", "doente", checkBoxSelection);
 
+                        Data_Base_Utils.getAllInfo("perfil");
                         Data_Base_Utils.changeScreen(actionEvent,"Screen_PaginaInicial.fxml");
                     } else {
                         System.out.println("Preencha todos os campos.");

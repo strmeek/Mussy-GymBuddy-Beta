@@ -370,7 +370,7 @@
                                           <Font name="Unispace-Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="tabPerfil_Label_Regularidade" layoutX="14.0" layoutY="188.0" text="Regularidade">
+                                    <Label fx:id="tabPerfil_Label_Regularidade" layoutX="15.0" layoutY="246.0" prefHeight="20.0" prefWidth="529.0" text="Regularidade">
                                        <font>
                                           <Font name="Unispace-Bold" size="14.0" />
                                        </font>
@@ -380,7 +380,7 @@
                                           <Font name="Unispace-Bold" size="14.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="tabPerfil_Label_Agua" layoutX="14.0" layoutY="246.0" text="Água">
+                                    <Label fx:id="tabPerfil_Label_Agua" layoutX="14.0" layoutY="188.0" text="Água">
                                        <font>
                                           <Font name="Unispace-Bold" size="14.0" />
                                        </font>

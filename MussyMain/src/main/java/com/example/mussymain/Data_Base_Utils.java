@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
 //Essa classe me ajuda a pegar informações do Banco de dados
 public class Data_Base_Utils {
     //Lista que salva o perfil logado
@@ -124,7 +125,7 @@ public class Data_Base_Utils {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
 
-        lista_Perfil = new ArrayList<Perfil>();
+        lista_Perfil = new ArrayList<>();
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
@@ -142,7 +143,6 @@ public class Data_Base_Utils {
                     // fromDB means From the Data Base
                     // traduzindo: veio da base de dados
                     String fromDB_senha = resultSet.getString("senha");
-                    String fromDB_nome = resultSet.getString("nome");
                     if (fromDB_senha.equals(senha)) {
 
                         Perfil perfil = new Perfil(
@@ -158,6 +158,7 @@ public class Data_Base_Utils {
                         String notNew2 = resultSet.getString("doente");
 
                         if (!notNew.equals("setMeta") && !notNew2.equals("notDoente")){
+                            getAllInfo("perfil");
                             changeScreen(actionEvent, "Screen_PaginaInicial.fxml");
                         } else {
                             changeScreenLogin(actionEvent, "Screen_Perfil.fxml", perfil);
@@ -529,7 +530,7 @@ public class Data_Base_Utils {
         }
         return info;
     }
-    public static Perfil getAllInfo(String table) {
+    public static void getAllInfo(String table) {
         Connection connection = null;
         PreparedStatement psGetInfo = null;
         ResultSet resultSet = null;
@@ -538,41 +539,35 @@ public class Data_Base_Utils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
-            psGetInfo = connection.prepareStatement("SELECT * FROM "+ table +" WHERE id = \'"+ perfil.getId() +"\'");
+            psGetInfo = connection.prepareStatement("SELECT * FROM "+ table +" WHERE id = ?");
+            psGetInfo.setInt(1, perfil.getId());
             resultSet = psGetInfo.executeQuery();
 
-            if (resultSet.isBeforeFirst()){
-                System.out.println("Usuário não encontrado");
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setContentText("Tente Novamente :)");
-                alert.show();
-            } else {
-                while(resultSet.next()) {
-                    perfil.setId(resultSet.getInt("id"));
-                    perfil.setNome(resultSet.getString("nome"));
-                    perfil.setEmail(resultSet.getString("email"));
-                    perfil.setCpf(resultSet.getString("cpf"));
-                    perfil.setSenha(resultSet.getString("senha"));
-                    perfil.setAltura(resultSet.getFloat("altura"));
-                    perfil.setPeso(resultSet.getFloat("peso"));
-                    perfil.setMeta(resultSet.getString("meta"));
-                    perfil.setSexo(resultSet.getString("sexo"));
-                    perfil.setNascimento(resultSet.getDate("nascimento"));
-                    perfil.setQnt_Atividade_Fisica(resultSet.getString("qnt_atividade_fisica"));
-                    perfil.setTempo_de_Treino(resultSet.getString("tempo_de_treino"));
-                    perfil.setGordura_Corporal(resultSet.getInt("gordura_corporal"));
-                    perfil.setComida_Regularidade(resultSet.getString("comida_regularidade"));
-                    perfil.setComida_Qualidade(resultSet.getString("comida_qualidade"));
-                    perfil.setComida_Agua(resultSet.getString("comida_agua"));
-                    perfil.setRotina_Estresse(resultSet.getString("rotina_estresse"));
-                    perfil.setRotina_Tempo_Para_Treinar(resultSet.getString("rotina_tempo_para_treinar"));
-                    perfil.setBiotipo(resultSet.getString("biotipo"));
-                    perfil.setSuplementos(resultSet.getString("suplementos"));
-                    perfil.setHormonios(resultSet.getString("hormonios"));
-                    perfil.setDoente(resultSet.getString("doente"));
-                    perfil.setCorpo_Desejado(resultSet.getString("corpo_desejado"));
+            while(resultSet.next()) {
+                perfil.setId(resultSet.getInt("id"));
+                perfil.setNome(resultSet.getString("nome"));
+                perfil.setEmail(resultSet.getString("email"));
+                perfil.setCpf(resultSet.getString("cpf"));
+                perfil.setSenha(resultSet.getString("senha"));
+                perfil.setAltura(resultSet.getFloat("altura"));
+                perfil.setPeso(resultSet.getFloat("peso"));
+                perfil.setMeta(resultSet.getString("meta"));
+                perfil.setSexo(resultSet.getString("sexo"));
+                perfil.setNascimento(resultSet.getDate("nascimento"));
+                perfil.setQnt_Atividade_Fisica(resultSet.getString("qnt_atividade_fisica"));
+                perfil.setTempo_de_Treino(resultSet.getString("tempo_de_treino"));
+                perfil.setGordura_Corporal(resultSet.getInt("gordura_corporal"));
+                perfil.setComida_Regularidade(resultSet.getString("comida_regularidade"));
+                perfil.setComida_Qualidade(resultSet.getString("comida_qualidade"));
+                perfil.setComida_Agua(resultSet.getString("comida_agua"));
+                perfil.setRotina_Estresse(resultSet.getString("rotina_estresse"));
+                perfil.setRotina_Tempo_Para_Treinar(resultSet.getString("rotina_tempo_para_treinar"));
+                perfil.setBiotipo(resultSet.getString("biotipo"));
+                perfil.setSuplementos(resultSet.getString("suplementos"));
+                perfil.setHormonios(resultSet.getString("hormonios"));
+                perfil.setDoente(resultSet.getString("doente"));
+                perfil.setCorpo_Desejado(resultSet.getString("corpo_desejado"));
                 }
-            }
         } catch (SQLException e){
             e.printStackTrace();
         } finally {
@@ -598,6 +593,5 @@ public class Data_Base_Utils {
                 }
             }
         }
-        return perfil;
     }
 }

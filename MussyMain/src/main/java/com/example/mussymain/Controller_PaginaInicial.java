@@ -99,7 +99,7 @@ public class Controller_PaginaInicial implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        loginUserInformation(Data_Base_Utils.lista_Perfil.get(0));
         MenuItem_Sair.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -117,7 +117,6 @@ public class Controller_PaginaInicial implements Initializable {
         });
     }
     public void loginUserInformation(Perfil perfil){
-        Data_Base_Utils.getAllInfo("perfil");
 
         tabPerfil_Label_Nome.setText("Nome: " + perfil.getNome());
         tabPerfil_Label_Altura.setText("Altura: " + perfil.getAltura());
