@@ -22,7 +22,7 @@
    <children>
       <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="800.0" style="-fx-background-color: #566573;">
         <items>
-            <MenuButton fx:id="pgInicial_MenuButton_Ola" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #566573;" text="Olá User!" textFill="#eaecee">
+            <MenuButton fx:id="pgInicial_MenuButton_Ola" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="295.0" style="-fx-background-color: #566573;" text="Olá User!" textFill="#eaecee">
               <items>
                   <MenuItem fx:id="MenuItem_Ajuda" mnemonicParsing="false" text="Ajuda" />
                 <MenuItem fx:id="MenuItem_Sair" mnemonicParsing="false" text="Logout" />
@@ -31,12 +31,12 @@
                   <Font name="Unispace-Bold" size="18.0" />
                </font>
             </MenuButton>
-            <Label fx:id="pgInicial_Label_MussyCoins" alignment="CENTER" prefHeight="30.0" prefWidth="472.0" text="MussyCoins = 0" textFill="#eaecee">
+            <Label fx:id="pgInicial_Label_MussyCoins" alignment="CENTER" prefHeight="30.0" prefWidth="344.0" text="MussyCoins = 0" textFill="#eaecee">
                <font>
                   <Font name="Unispace-Bold" size="18.0" />
                </font>
             </Label>
-            <Button fx:id="pgInicial_Button_Amigos1" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: Transparent;" text="Amigos \/" textFill="#eaecee">
+            <Button fx:id="pgInicial_Button_Amigos1" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="126.0" style="-fx-background-color: Transparent;" text="Amigos \/" textFill="#eaecee">
                <font>
                   <Font name="Unispace-Bold" size="18.0" />
                </font>

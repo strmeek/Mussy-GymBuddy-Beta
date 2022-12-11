@@ -179,6 +179,8 @@ public class Controller_PaginaInicial implements Initializable {
                     csPage2.setLeading(16.0f);
                     csPage2.newLineAtOffset(25,page1.getTrimBox().getHeight() - 25);
 
+                    csPage2.showText("Ficha de Treino: Default");
+                    csPage2.newLine();
                     csPage2.showText("A (Quadriceps)");
                     csPage2.newLine();
                     csPage2.showText("0 - Aquecimento: Passada");
@@ -270,6 +272,8 @@ public class Controller_PaginaInicial implements Initializable {
         tabPerfil_Label_Anabol.setText("Usa Veneninhos(rs): " + perfil.getHormonios());
         tabPerfil_Label_Doenca.setText("Doença: " + perfil.getDoente());
         pgInicial_Label_MussyCoins.setText("MussyCoins = " + perfil.getMussycoins());
+        tabPerfil_Label_Ficha.setText("Ficha de Treino: Default");
+        pgInicial_MenuButton_Ola.setText("Olá " + perfil.getNome());
 
         idade = calculoIdade(perfil.getNascimento().getDate(),
                 perfil.getNascimento().getMonth(),
@@ -282,7 +286,33 @@ public class Controller_PaginaInicial implements Initializable {
                 perfil.getSexo());
         DecimalFormat format = new DecimalFormat();
         tabPerfil_Label_TMB.setText(String.format("TMB: " + format.format(TMB)));
-    }
+
+        tabComida_Label_Basal.setText(format.format(TMB));
+
+        if (perfil.getQnt_Atividade_Fisica().equalsIgnoreCase("intensa")){
+            tabComida_Label_GastoMedio.setText(format.format(TMB + 750));
+        }else if (perfil.getQnt_Atividade_Fisica().equalsIgnoreCase("moderada")){
+            tabComida_Label_GastoMedio.setText(format.format(TMB + 450));
+        } else {
+            tabComida_Label_GastoMedio.setText(format.format(TMB + 75));
+        }
+        if (perfil.getMeta().equalsIgnoreCase("perder gordura")) {
+            tabComida_Label_Consumir.setText(format.format(TMB - 425));
+            tabComida_Label_CarboCount.setText(String.valueOf(perfil.getPeso() * 2));
+            tabComida_Label_ProteinCount.setText(String.valueOf(perfil.getPeso() * 2));
+            tabComida_Label_FatCount.setText(String.valueOf(perfil.getPeso() * 0.75));
+        }else if (perfil.getMeta().equalsIgnoreCase("ganhar massa")) {
+            tabComida_Label_Consumir.setText(format.format(TMB + 425 + 600) + "+");
+            tabComida_Label_CarboCount.setText(String.valueOf(perfil.getPeso() * 4));
+            tabComida_Label_ProteinCount.setText(String.valueOf(perfil.getPeso() * 2));
+            tabComida_Label_FatCount.setText(String.valueOf(perfil.getPeso() * 1.25));
+        } else {
+            tabComida_Label_Consumir.setText(format.format(TMB - 250));
+            tabComida_Label_CarboCount.setText(String.valueOf(perfil.getPeso() * 2.5));
+            tabComida_Label_ProteinCount.setText(String.valueOf(perfil.getPeso() * 2));
+            tabComida_Label_FatCount.setText(String.valueOf(perfil.getPeso() * 1));
+            }
+        }
     public static int calculoIdade(int dia, int mes, int ano) {
         int idade = (int) ChronoUnit.YEARS.between(LocalDate.of(ano, mes, dia), LocalDate.now());
         if (dia == LocalDate.now().getDayOfMonth() && mes == LocalDate.now().getMonthValue() - 1){
