@@ -103,7 +103,7 @@
                               </Label>
                               <ImageView fx:id="tabHome_ImageView_Cbum" fitHeight="201.0" fitWidth="442.0" layoutX="62.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../Images/Cbum.jpg"/>
+                                    <Image url="@../../../../Images/Cbum.jpg" />
                                  </image>
                               </ImageView>
                               <Label layoutX="104.0" layoutY="499.0" text="Lalá: Cbum tá se cagando de medo" textFill="#eaecee">
@@ -137,7 +137,7 @@
                                     <Font name="Unispace-Bold" size="10.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="tabTreino_Button_PdfTreino" layoutX="10.0" layoutY="443.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="274.0" style="-fx-background-color: #52BE80;" text="Clique Aqui!&#10;PDF com seu treino&#10;completo!" textAlignment="CENTER" textFill="WHITE">
+                              <Button fx:id="tabTreino_Button_PdfTreino" layoutX="10.0" layoutY="415.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="274.0" style="-fx-background-color: #52BE80;" text="Clique Aqui!&#10;PDF com seu treino&#10;completo!" textAlignment="CENTER" textFill="WHITE">
                                  <font>
                                     <Font name="Unispace-Bold" size="18.0" />
                                  </font>
@@ -154,12 +154,12 @@
                                  </font>
                               </Label>
                               <Separator layoutY="-2.0" orientation="VERTICAL" prefHeight="579.0" prefWidth="0.0" />
-                              <Button fx:id="tabTreino_Button_TaPago" layoutX="145.0" layoutY="464.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="272.0" style="-fx-background-color: #52BE80;" text="Tá Pago!" textFill="WHITE">
+                              <Button fx:id="tabTreino_Button_TaPago" layoutX="145.0" layoutY="455.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="272.0" style="-fx-background-color: #52BE80;" text="Tá Pago!" textFill="WHITE">
                                  <font>
                                     <Font name="Unispace-Bold" size="18.0" />
                                  </font>
                               </Button>
-                              <Label alignment="CENTER" layoutX="146.0" layoutY="501.0" prefHeight="32.0" prefWidth="111.0" text="+ 100 MussyCoins" textFill="#eaecee">
+                              <Label alignment="CENTER" layoutX="145.0" layoutY="493.0" prefHeight="32.0" prefWidth="111.0" text="+ 100 MussyCoins" textFill="#eaecee">
                                  <font>
                                     <Font name="Unispace-Bold" size="10.0" />
                                  </font>

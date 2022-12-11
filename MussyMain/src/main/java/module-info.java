@@ -10,6 +10,7 @@ module com.example.mussymain {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires net.synedra.validatorfx;
+    requires org.apache.pdfbox;
     requires java.sql;
 
     opens com.example.mussymain to javafx.fxml;

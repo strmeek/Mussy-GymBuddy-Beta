@@ -8,8 +8,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -100,6 +105,9 @@ public class Controller_PaginaInicial implements Initializable {
     @FXML
     private Label tabPerfil_Label_Ficha;
 
+    int idade = 0;
+    double TMB = 0;
+
     File fileRamon = new File("@../../../../Images/Ramon.jpg");
     Image imageRamon = new Image(fileRamon.toURI().toString());
     File fileCbum = new File("@../../../../Images/Cbum.jpg");
@@ -114,6 +122,89 @@ public class Controller_PaginaInicial implements Initializable {
         tabTreino_Button_PdfTreino.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
+                try {
+                    Perfil perfil = Data_Base_Utils.lista_Perfil.get(0);
+
+                    String path = "C:\\Mussy JavaFX\\MussyMain\\src\\main\\pdfs\\treino.pdf";
+                    File file = new File(path);
+
+                    PDDocument document = new PDDocument();
+                    PDPage page1 = new PDPage();
+                    PDPage page2 = new PDPage();
+                    document.addPage(page1);
+                    document.addPage(page2);
+
+                    PDPageContentStream csPage1 = new PDPageContentStream(document, page1);
+                    csPage1.beginText();
+                    csPage1.setFont(PDType1Font.TIMES_ROMAN,14);
+                    csPage1.setLeading(16.0f);
+                    csPage1.newLineAtOffset(25,page1.getTrimBox().getHeight() - 25);
+
+                    csPage1.showText("Nome: " + perfil.getNome());
+                    csPage1.newLine();
+                    csPage1.showText("Idade: " + idade);
+                    csPage1.newLine();
+                    csPage1.showText("Meta: " + perfil.getMeta());
+                    csPage1.newLine();
+                    csPage1.showText("Nivel Acad: " + perfil.getTempo_de_Treino());
+                    csPage1.newLine();
+                    csPage1.showText("NDC: " + perfil.getQnt_Atividade_Fisica());
+                    csPage1.newLine();
+                    csPage1.showText("Usa Suplemento: " + perfil.getSuplementos());
+                    csPage1.newLine();
+                    csPage1.showText("Usa Veneninhos(rs): " + perfil.getHormonios());
+                    csPage1.newLine();
+                    csPage1.showText("Doença: " + perfil.getDoente());
+                    csPage1.newLine();
+                    DecimalFormat format = new DecimalFormat();
+                    csPage1.showText("Taxa Metabólica Basal: " + format.format(TMB));
+                    csPage1.newLine();
+
+                    csPage1.endText();
+                    csPage1.close();
+
+                    PDPageContentStream csPage2 = new PDPageContentStream(document, page2);
+                    csPage2.beginText();
+                    csPage2.setFont(PDType1Font.TIMES_ROMAN,14);
+                    csPage2.setLeading(16.0f);
+                    csPage2.newLineAtOffset(25,page1.getTrimBox().getHeight() - 25);
+
+                    csPage2.showText("A (Quadriceps)");
+                    csPage2.newLine();
+                    csPage2.showText("0 - Aquecimento: Passada");
+                    csPage2.newLine();
+                    csPage2.showText("1 - Adutora 4xfalha // pré exaustão");
+                    csPage2.newLine();
+                    csPage2.showText("2 - Bulgarian Squat (ou Agach. livre) 4xfalha");
+                    csPage2.newLine();
+                    csPage2.showText("3 - Leg Press 6xfalha // com dropset nas 2 ultimas");
+                    csPage2.newLine();
+                    csPage2.showText("4 - Agachamento na maq 4xfalha");
+                    csPage2.newLine();
+                    csPage2.showText("5 - Extensora 6xfalha // com isometria");
+                    csPage2.newLine();
+                    csPage2.showText("Legenda: pré exaustão = tecnica para isolar um músculo cansando os seus auxiliares");
+                    csPage2.newLine();
+                    csPage2.showText("dropset = é tirada alguma carga consideravel no meio da série para aumentar a intensidade");
+                    csPage2.newLine();
+                    csPage2.showText("isometria = você deve segurar o peso no pico de contração do músculo, aumentando o tempo de tensão");
+                    csPage2.newLine();
+
+                    csPage2.endText();
+                    csPage2.close();
+
+                    document.save(file);
+                    document.close();
+
+                    System.out.println("Seu PDF");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setContentText("Seu pdf está em: \n" +
+                    "\\MussyMain\\src\\main\\pdfs");
+                    alert.show();
+
+                } catch (IOException e){
+                    e.printStackTrace();
+                }
             }
         });
         MenuItem_Sair.setOnAction(new EventHandler<ActionEvent>() {
@@ -154,12 +245,12 @@ public class Controller_PaginaInicial implements Initializable {
         tabPerfil_Label_Anabol.setText("Usa Veneninhos(rs): " + perfil.getHormonios());
         tabPerfil_Label_Doenca.setText("Doença: " + perfil.getDoente());
 
-        int idade = calculoIdade(perfil.getNascimento().getDate(),
+        idade = calculoIdade(perfil.getNascimento().getDate(),
                 perfil.getNascimento().getMonth(),
                 perfil.getNascimento().getYear());
         tabPerfil_Label_Idade.setText("Idade: " + idade);
 
-        double TMB = calculoTMB(perfil.getPeso(),
+        TMB = calculoTMB(perfil.getPeso(),
                 perfil.getAltura(),
                 idade,
                 perfil.getSexo());
