@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Data_Base_Utils {
+    //Lista que salva o perfil logado
     public static ArrayList<Perfil> lista_Perfil;
 
     public static void changeScreenLogin(ActionEvent actionEvent, String fxmlFile, Perfil perfil) {
