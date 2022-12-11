@@ -6,8 +6,10 @@ import javafx.fxml.FXML;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import java.io.File;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
@@ -98,10 +100,22 @@ public class Controller_PaginaInicial implements Initializable {
     @FXML
     private Label tabPerfil_Label_Ficha;
 
+    File fileRamon = new File("@../../../../Images/Ramon.jpg");
+    Image imageRamon = new Image(fileRamon.toURI().toString());
+    File fileCbum = new File("@../../../../Images/Cbum.jpg");
+    Image imageCbum = new Image(fileCbum.toURI().toString());
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loginUserInformation(Data_Base_Utils.lista_Perfil.get(0));
+        tabHome_ImageView_Ramon.setImage(imageRamon);
+        tabHome_ImageView_Cbum.setImage(imageCbum);
+
+        tabTreino_Button_PdfTreino.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+            }
+        });
         MenuItem_Sair.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
@@ -145,7 +159,10 @@ public class Controller_PaginaInicial implements Initializable {
                 perfil.getNascimento().getYear());
         tabPerfil_Label_Idade.setText("Idade: " + idade);
 
-        double TMB = calculoTMB(perfil.getPeso(), perfil.getAltura(), idade, perfil.getSexo());
+        double TMB = calculoTMB(perfil.getPeso(),
+                perfil.getAltura(),
+                idade,
+                perfil.getSexo());
         DecimalFormat format = new DecimalFormat();
         tabPerfil_Label_TMB.setText(String.format("TMB: " + format.format(TMB)));
     }
