@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+//Essa classe me ajuda a pegar informações do Banco de dados
 public class Data_Base_Utils {
     //Lista que salva o perfil logado
     public static ArrayList<Perfil> lista_Perfil;
