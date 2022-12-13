@@ -207,7 +207,7 @@ public class Data_Base_Utils {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
 
-            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row +" = \'"+ update +"\' WHERE id = \'" + perfil.getId() +"\'");
+            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row + " = '" + update + "' WHERE id = '" + perfil.getId() + "'");
             psUpdate.executeUpdate();
 
         }
@@ -240,7 +240,7 @@ public class Data_Base_Utils {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
 
-            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row +" = \'"+ date +"\' WHERE id = \'" + perfil.getId() +"\'");
+            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row + " = '" + date + "' WHERE id = '" + perfil.getId() + "'");
             psUpdate.executeUpdate();
 
         }
@@ -273,7 +273,7 @@ public class Data_Base_Utils {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
 
-            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row +" = \'"+ update +"\' WHERE id = \'" + perfil.getId() +"\'");
+            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row + " = '" + update + "' WHERE id = '" + perfil.getId() + "'");
             psUpdate.executeUpdate();
 
         }
@@ -306,7 +306,7 @@ public class Data_Base_Utils {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
 
-            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row +" = \'"+ update +"\' WHERE id = \'" + perfil.getId() +"\'");
+            psUpdate = connection.prepareStatement("UPDATE "+ table +" SET "+ row + " = '" + update + "' WHERE id = '" + perfil.getId() + "'");
             psUpdate.executeUpdate();
 
         }
@@ -340,7 +340,7 @@ public class Data_Base_Utils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
-            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = \'" + perfil.getId() + "\'");
+            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = '" + perfil.getId() + "'");
             resultSet = psGetInfo.executeQuery();
 
             if (resultSet.isBeforeFirst()){
@@ -390,7 +390,7 @@ public class Data_Base_Utils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
-            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = \'" + perfil.getId() + "\'");
+            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = '" + perfil.getId() + "'");
             resultSet = psGetInfo.executeQuery();
 
             if (resultSet.isBeforeFirst()){
@@ -440,7 +440,7 @@ public class Data_Base_Utils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
-            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = \'" + perfil.getId() + "\'");
+            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = '" + perfil.getId() + "'");
             resultSet = psGetInfo.executeQuery();
 
             if (resultSet.isBeforeFirst()){
@@ -490,7 +490,7 @@ public class Data_Base_Utils {
 
         try {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mussy_database", "root", "");
-            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = \'" + perfil.getId() + "\'");
+            psGetInfo = connection.prepareStatement("SELECT " + column + " FROM " + table + " WHERE id = '" + perfil.getId() + "'");
             resultSet = psGetInfo.executeQuery();
 
             if (resultSet.isBeforeFirst()){

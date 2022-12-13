@@ -113,11 +113,6 @@ public class Controller_PaginaInicial implements Initializable {
     int idade = 0;
     double TMB = 0;
 
-    File fileRamon = new File("@../../../../Images/Ramon.jpg");
-    Image imageRamon = new Image(fileRamon.toURI().toString());
-    File fileCbum = new File("@../../../../Images/Cbum.jpg");
-    Image imageCbum = new Image(fileCbum.toURI().toString());
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Perfil perfil = Data_Base_Utils.lista_Perfil.get(0);
@@ -126,8 +121,10 @@ public class Controller_PaginaInicial implements Initializable {
 
         final int[] coins = {perfil.getMussycoins()};
 
-        tabHome_ImageView_Ramon.setImage(imageRamon);
-        tabHome_ImageView_Cbum.setImage(imageCbum);
+        //Image imageRamon = new Image(getClass().getResourceAsStream("../main/Images/Ramon.jpg"));
+        //Image imageCbum = new Image(getClass().getResourceAsStream("../main/Images/Cbum.jpg"));
+        //tabHome_ImageView_Ramon.setImage(imageRamon);
+        //tabHome_ImageView_Cbum.setImage(imageCbum);
 
         tabTreino_Button_PdfTreino.setOnAction(new EventHandler<ActionEvent>() {
             @Override
